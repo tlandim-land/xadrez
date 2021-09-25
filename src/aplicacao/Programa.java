@@ -1,6 +1,7 @@
 package aplicacao;
 
-import jogoTabuleiro.Posicao;
+import jogoTabuleiro.Tabuleiro;
+import xadrez.PartidaXadrez;
 
 public class Programa {
 
@@ -8,9 +9,9 @@ public class Programa {
 		System.out.println("BEM VINDO AO JOGO... QUE VENÇA O MELHOR!");
 		System.out.println();
 		
-		Posicao pos = new Posicao(3, 4);
+		Tabuleiro tabuleiro = new Tabuleiro(8, 8);
 		
-		System.out.println(pos);
+		PartidaXadrez partida = new PartidaXadrez();
+		UI.imprimeTabuleiro(partida.getPecas());
 	}
-
 }

@@ -4,7 +4,6 @@ public class Posicao {
 	private Integer linha;
 	private Integer coluna;
 	
-	// construtores da classe
 	public Posicao() {
 	}
 	
@@ -13,7 +12,6 @@ public class Posicao {
 		this.coluna = coluna;
 	}
 	
-	// getters e setters 
 	public Integer getLinha() {
 		return linha;
 	}
