@@ -4,6 +4,7 @@ import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
 import xadrez.pecas.Bispo;
 import xadrez.pecas.Cavalo;
+import xadrez.pecas.Peao;
 import xadrez.pecas.Rainha;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -37,5 +38,9 @@ public class PartidaXadrez {
 		tabuleiro.colocandoPeca(new Bispo(tabuleiro, Cor.BLACK), new Posicao(0,5));
 		tabuleiro.colocandoPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(0,3));
 		tabuleiro.colocandoPeca(new Rainha(tabuleiro, Cor.BLACK), new Posicao(0,4));
+		
+		for (int i = 0; i < 8; i++) {
+			tabuleiro.colocandoPeca(new Peao(tabuleiro, Cor.BLACK), new Posicao(1, i));
+		}
 	}
 }
