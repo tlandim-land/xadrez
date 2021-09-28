@@ -28,19 +28,17 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	private void lugarNovaPeca(char coluna, int linha, PecaXadrez peca) {
+		tabuleiro.colocandoPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
+	}
+	
 	private void configuracaoInicial() {
 		// monta peças pretas
-		tabuleiro.colocandoPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(0,0));
-		tabuleiro.colocandoPeca(new Torre(tabuleiro, Cor.BLACK), new Posicao(0,7));
-		tabuleiro.colocandoPeca(new Cavalo(tabuleiro, Cor.BLACK), new Posicao(0,1));
-		tabuleiro.colocandoPeca(new Cavalo(tabuleiro, Cor.BLACK), new Posicao(0,6));
-		tabuleiro.colocandoPeca(new Bispo(tabuleiro, Cor.BLACK), new Posicao(0,2));
-		tabuleiro.colocandoPeca(new Bispo(tabuleiro, Cor.BLACK), new Posicao(0,5));
-		tabuleiro.colocandoPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(0,3));
-		tabuleiro.colocandoPeca(new Rainha(tabuleiro, Cor.BLACK), new Posicao(0,4));
+		lugarNovaPeca('a', 8, new Torre(tabuleiro, Cor.BLACK));
+		lugarNovaPeca('h', 8, new Torre(tabuleiro, Cor.BLACK));
 		
-		for (int i = 0; i < 8; i++) {
-			tabuleiro.colocandoPeca(new Peao(tabuleiro, Cor.BLACK), new Posicao(1, i));
-		}
+		//for (int i = 0; i < 8; i++) {
+		//	tabuleiro.colocandoPeca(new Peao(tabuleiro, Cor.BLACK), new Posicao(1, i));
+		//}
 	}
 }
