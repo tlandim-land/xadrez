@@ -1,7 +1,7 @@
 package jogoTabuleiro;
 
 public class Tabuleiro {
-
+	
 	private Integer linhas;
 	private Integer colunas;
 	private Peca[][] pecas;
@@ -34,5 +34,10 @@ public class Tabuleiro {
 	
 	public Peca peca(Posicao posicao) {
 		return pecas[posicao.getLinha()][posicao.getColuna()];
-	}	
+	}
+	
+	public void colocandoPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;		
+	}
 }
