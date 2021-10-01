@@ -1,11 +1,14 @@
 package aplicacao;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import xadrez.Cor;
 import xadrez.PecaXadrez;
+import xadrez.PosicaoXadrez;
 
 public class UI {
 
-	
 	// https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
 
 	public static final String ANSI_RESET = "\u001B[0m";
@@ -27,6 +30,18 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	
+	public static PosicaoXadrez lerPosicaoXadrez(Scanner sc) {
+		try {
+			String s = sc.nextLine();
+			char coluna = s.charAt(0);
+			int linha = Integer.parseInt(s.substring(1));
+			return new PosicaoXadrez(coluna, linha);
+		} 
+		catch(RuntimeException e) {
+			throw new InputMismatchException("ERRO AO LER POSICAO XADREZ. VALORES VALIDOS A1 AO H8.");
+		}
+	}
+	
 	public static void imprimeTabuleiro(PecaXadrez[][] pecas) {
 		for (int l = 0; l < pecas.length; l++ ) {
 			
@@ -45,7 +60,6 @@ public class UI {
 		if (peca == null) {
 			System.out.print("-");
 		} else {
-
 			if (peca.getCor() == Cor.WHITE) {
 				System.out.print(ANSI_WHITE + peca + ANSI_RESET);
 			} else {
@@ -54,4 +68,6 @@ public class UI {
 		}
 		System.out.print(" ");
 	}
+	
+	
 }
