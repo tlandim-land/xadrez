@@ -15,4 +15,10 @@ public class Peao extends PecaXadrez{
 		// pawn
 		return "P";
 	}
+
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

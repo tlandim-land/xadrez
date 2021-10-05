@@ -15,4 +15,10 @@ public class Bispo extends PecaXadrez{
 		// bishop
 		return "B";
 	}
+
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
